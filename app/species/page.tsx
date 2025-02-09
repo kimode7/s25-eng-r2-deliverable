@@ -37,9 +37,9 @@ export default async function SpeciesList() {
       <div className="flex flex-wrap justify-center">
         {species?.map((species) => <SpeciesCard key={species.id} species={species} userId={sessionId}/>)}
       </div>
-      
+
       <div>
-        {profile?.map((profile) => <ProfileCard profile={profile}/>)}
+        {profile?.map((profile) => <ProfileCard key={profile.id} profile={profile}/>)}
       </div>
     </>
   );

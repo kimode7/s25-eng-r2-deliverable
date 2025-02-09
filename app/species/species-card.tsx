@@ -32,7 +32,7 @@ import {
 import { UpdateSpeciesDialog } from "./add-species-dialog";
 
 
-export default function SpeciesCard({ species, userId}: { species: Species; userId: String  }) {
+export default function SpeciesCard({ species, userId}: { species: Species; userId: string  }) {
 
   return (
     <div className="m-4 w-72 min-w-72 flex-none rounded border-2 p-3 shadow">

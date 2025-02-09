@@ -25,7 +25,7 @@ export default async function profileList() {
 
 
       <div className="flex flex-wrap justify-center">
-        {profile?.map((profile) => <ProfileCard profile={profile}/>)}
+        {profile?.map((profile) => <ProfileCard profile={profile} key={profile.id}/>)}
       </div>
     </>
   );

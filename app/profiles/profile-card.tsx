@@ -11,14 +11,7 @@ React server components don't track state between rerenders, so leaving the uniq
 can cause errors with matching props and state in child components if the list order changes.
 */
 import type { Database } from "@/lib/schema";
-type Species = Database["public"]["Tables"]["species"]["Row"];
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
-
-
-
-
-
-
 
 
 export function ProfileCard({profile}: { profile: Profiles}) {
