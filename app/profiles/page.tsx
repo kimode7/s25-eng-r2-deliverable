@@ -17,8 +17,6 @@ export default async function profileList() {
   }
 
   const { data: profile } = await supabase.from("profiles").select("*").order("id", { ascending: false });
-  console.log("Profiles Data:")
-
 
   return (
     <>

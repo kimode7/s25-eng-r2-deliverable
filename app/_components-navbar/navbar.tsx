@@ -19,9 +19,13 @@ export default async function Navbar({ className, ...props }: React.HTMLAttribut
         </Link>
 
       )}
-              <Link href="/profiles" className="text-sm font-medium transition-colors hover:text-primary">
+
+{user && (
+        <Link href="/profiles" className="text-sm font-medium transition-colors hover:text-primary">
           Profiles
         </Link>
+
+      )}
     </nav>
   );
 }

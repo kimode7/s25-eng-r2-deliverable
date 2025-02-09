@@ -3,7 +3,6 @@ import { TypographyH2 } from "@/components/ui/typography";
 import { createServerSupabaseClient } from "@/lib/server-utils";
 import { redirect } from "next/navigation";
 import SpeciesCard from "./species-card";
-import {ProfileCard} from "./species-card";
 
 
 export default async function SpeciesList() {
@@ -22,8 +21,6 @@ export default async function SpeciesList() {
    const sessionId = session.user.id;
 
   const { data: species } = await supabase.from("species").select("*").order("id", { ascending: false });
-  const { data: profile } = await supabase.from("profiles").select("*").order("id", { ascending: false });
-  console.log("Profiles Data:")
 
 
   return (
@@ -36,10 +33,6 @@ export default async function SpeciesList() {
       <Separator className="my-4" />
       <div className="flex flex-wrap justify-center">
         {species?.map((species) => <SpeciesCard key={species.id} species={species} userId={sessionId}/>)}
-      </div>
-
-      <div>
-        {profile?.map((profile) => <ProfileCard key={profile.id} profile={profile}/>)}
       </div>
     </>
   );
